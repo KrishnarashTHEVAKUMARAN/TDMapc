@@ -13,3 +13,7 @@ __TD1 Step1__
 __TD1 Step2__
 
 ![Screenshoot](td1/app/src/main/java/td1/step2/td1_step2.png "PlantUML Td1_step2")
+
+__TD1 Step3__
+
+![Screenshoot](td1/app/src/main/java/td1/step3/td1_step3.png "PlantUML Td1_step3")
