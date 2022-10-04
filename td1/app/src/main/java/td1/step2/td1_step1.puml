@@ -1,0 +1,81 @@
+@startuml td1_step2
+'https://plantuml.com/class-diagram'
+!include commons.style
+package TD1 {
+  package step2.api {
+    package money {
+        interface Product{
+        price(): double
+        }
+    }
+
+    package food {
+        interface Food{
+        calories_per_100g(): double
+        }
+    }
+
+    package restauration {
+        interface WeightedFoodProduct{
+            weight(): double
+            calories() : double <<default>>
+        }
+
+        interface FoodProduct extends Product,Food{
+            hasUniquePrice() : bool
+        }
+    }
+
+    package burger {
+        class Burger implements WeightedFoodProduct{
+        -name : String
+
+        +this(in name: String, in items: List<Ingredient>)
+        +name(): String
+        +calories_per_100g(): double
+        +weight(): double
+        +calories() : double
+        +price(): double
+        +hasUniquePrice() : bool
+        +toString(): String
+        }
+
+        class Ingredient implements WeightedFoodProduct{
+        -weight : double
+
+        +this(in type: FoodType, in weight: double)
+        +calories_per_100g(): double
+        +weight(): double
+        +calories() : double
+        +price(): double
+        +hasUniquePrice() : bool
+        }
+
+        enum FoodType implements FoodProduct{
+        BURGER, BARBECUE, BEARNAISE
+        BEEF, WHITEFISH
+        CHEDDAR, DEEPFRIEDONIONS, TOMATO
+
+        +calories_per_100g(): double
+        +price(): double
+        +hasUniquePrice() : bool
+        }
+
+        Ingredient "*" <--*  Burger : -items
+        FoodType "*" <--*  Ingredient : -type
+
+    }
+
+  }
+
+  package client {
+    class App
+  }
+
+  client ..> step2.api
+
+}
+
+
+
+@enduml
