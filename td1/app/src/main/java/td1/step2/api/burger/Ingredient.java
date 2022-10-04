@@ -12,7 +12,7 @@ public class Ingredient implements WeightedFoodProduct {
     }
 
     public double calories_per_100g() {
-        return type.calories_per_100g();
+        return type.calories_per_100g()/100*weight;
     }
 
     @Override
@@ -30,7 +30,7 @@ public class Ingredient implements WeightedFoodProduct {
 
     @Override
     public String toString() {
-        return String.format("%s (%.0fg) -- %.2f€", this.type, weight(), price());
+        return String.format("%s (%.0fg) -- %.2f", this.type, weight(), price());
     }
 
 }

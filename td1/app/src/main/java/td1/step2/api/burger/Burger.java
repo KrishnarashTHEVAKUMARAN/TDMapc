@@ -29,7 +29,7 @@ public class Burger implements WeightedFoodProduct {
 
     @Override
     public double calories() {
-        return items.stream().map(Ingredient::calories).reduce(0.0, Double::sum);
+        return items.stream().map(Ingredient::calories_per_100g).reduce(0.0, Double::sum);
     }
 
     public double price() {
