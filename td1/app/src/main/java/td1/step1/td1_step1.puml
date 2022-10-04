@@ -1,24 +1,32 @@
-@startuml td1_original
+@startuml td1_step1
 'https://plantuml.com/class-diagram'
 !include commons.style
 package TD1 {
-  package original {
+  package step1 {
     package api.general {
         interface Product{
         weight(): double
         price(): double
         }
 
+        interface Food{
+        calories_per_100g(): double
+        }
+
+        interface FoodProduct extends Product,Food{
+        calories() : double <<default>>
+        }
+
         class Burger{
         name : String
 
-        +this(in name: String, in items: List<Product>)
+        +this(in name: String, in items: List<FoodProduct>)
         +weight(): double
         +price(): double
         +toString(): String
         }
 
-        class Sauce implements Product{
+        class Sauce implements FoodProduct{
         -BASE_PRICE: {static} double
         -type: SauceType
         -weight: double
@@ -29,7 +37,7 @@ package TD1 {
         +toString(): String
         }
 
-        class Meat implements Product{
+        class Meat implements FoodProduct{
         -type: MeatType
         -weight: double
         +MeatType: enum
@@ -40,7 +48,7 @@ package TD1 {
         +toString(): String
         }
 
-        class Cheddar implements Product{
+        class Cheddar implements FoodProduct{
         -weight: double
         -BASE_PRICE: double
 
@@ -50,7 +58,7 @@ package TD1 {
         +toString(): String
         }
 
-        class Tomato implements Product{
+        class Tomato implements FoodProduct{
         -weight: double
         -BASE_PRICE: double
 
@@ -60,7 +68,7 @@ package TD1 {
         +toString(): String
         }
 
-        class DeepFriedOnion implements Product{
+        class DeepFriedOnion implements FoodProduct{
         -weight: double
         -BASE_PRICE: double
 
@@ -70,20 +78,22 @@ package TD1 {
         +toString(): String
         }
 
-        enum SauceType{
+        enum SauceType implements Food{
         BURGER, BARBECUE, BEARNAISE
         }
 
-        enum MeatType{
+        enum MeatType implements Food{
         BEEF, WHITEFISH
         +price(): double
         }
 
 
-        Product "*" <--*  Burger : -items
+        FoodProduct "*" <--*  Burger : -items
+
 
         SauceType <--* Sauce : -type
         MeatType <--* Meat : -type
+
     }
 
     package client {
