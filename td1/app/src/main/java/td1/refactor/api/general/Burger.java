@@ -1,43 +1,35 @@
-package td1.step2.api.burger;
-
-import td1.step2.api.restauration.WeightedFoodProduct;
+package td1.refactor.api.general;
 
 import java.util.List;
 
-public class Burger implements WeightedFoodProduct {
+public abstract class Burger implements FoodProduct {
 
     private String name;
-    private List<Ingredient> items;
+    private List<FoodProduct> items;
 
-    public Burger(String name, List<Ingredient> items) {
+    protected Burger(String name, List<FoodProduct> items) {
         this.name = name;
         this.items = items;
     }
 
-    public String name() {
-        return name;
-    }
-
-    public double calories_per_100g() {
-        return calories() / weight() * 100;
+    @Override
+    public double calories() {
+        return items.stream().map(FoodProduct::calories).reduce(0.0, Double::sum);
     }
 
     @Override
     public double weight() {
-        return items.stream().map(Ingredient::weight).reduce(0.0, Double::sum);
+        return items.stream().map(Product::weight).reduce(0.0, Double::sum);
     }
 
     @Override
-    public double calories() {
-        return items.stream().map(Ingredient::calories_per_100g).reduce(0.0, Double::sum);
-    }
-
     public double price() {
-        return items.stream().map(Ingredient::price).reduce(0.0, Double::sum);
+        return items.stream().map(Product::price).reduce(0.0, Double::sum);
     }
 
-    public boolean hasUniquePrice() {
-        return true;
+    @Override
+    public double calories_per_100g() {
+        return calories() / weight() * 100;
     }
 
     @Override
@@ -45,7 +37,7 @@ public class Burger implements WeightedFoodProduct {
         final String DELIM = "--------------------\n";
         StringBuilder buffer = new StringBuilder();
         buffer.append(String.format("*** Menu %s ***\n", name));
-        for (Ingredient item : items) {
+        for (FoodProduct item : items) {
             buffer.append(String.format("- %s\n", item));
         }
         buffer.append(DELIM);

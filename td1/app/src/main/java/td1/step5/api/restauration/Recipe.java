@@ -53,8 +53,8 @@ public class Recipe implements ComposedFood {
         buffer.append(DELIM);
         buffer.append(String.format("price:         %.2f\n", price()));
         buffer.append(DELIM);
-        buffer.append(String.format("calories:      %.0f\n", calories()));
-        buffer.append(String.format("calories/100g: %.0f\n", calories_per_100g()));
+        buffer.append(String.format("calories:         %.2f\n", calories()));
+        buffer.append(String.format("calories/100g:    %.2f\n", calories_per_100g()));
         buffer.append(DELIM);
         return buffer.toString();
     }

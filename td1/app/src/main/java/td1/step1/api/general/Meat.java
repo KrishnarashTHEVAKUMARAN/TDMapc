@@ -26,16 +26,16 @@ public class Meat implements FoodProduct {
         // WHITEFISH : 170 kcal / 100g
 
         public double price() {
-            double rtr;
+            double price;
             switch (this) {
                 case WHITEFISH:
-                    rtr = 6;
+                    price = 6;
                     break;
                 case BEEF:
                 default:
-                    rtr = 4;
+                    price = 4;
             }
-            return rtr;
+            return price;
         }
     }
 

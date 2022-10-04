@@ -7,34 +7,34 @@ public enum FoodType implements FoodProduct {
 
     @Override
     public double calories_per_100g() {
-        double rtr;
+        double cal;
         switch (this) {
             case BURGER:
-                rtr = 240;
+                cal = 240;
                 break;
             case BARBECUE:
-                rtr = 130;
+                cal = 130;
                 break;
             case BEARNAISE:
-                rtr = 550;
+                cal = 550;
                 break;
             case BEEF:
-                rtr = 200;
+                cal = 200;
                 break;
             case WHITEFISH:
-                rtr = 170;
+                cal = 170;
                 break;
             case CHEDDAR:
-                rtr = 400;
+                cal = 400;
                 break;
             case DEEPFRIEDONIONS:
-                rtr = 590;
+                cal = 590;
                 break;
             case TOMATO:
             default:
-                rtr = 21;
+                cal = 21;
         }
-        return rtr;
+        return cal;
     }
 
     @Override

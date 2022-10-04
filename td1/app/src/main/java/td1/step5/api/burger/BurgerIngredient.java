@@ -7,36 +7,36 @@ public enum BurgerIngredient implements Base {
 
     @Override
     public double calories_per_100g() {
-        double rtr;
+        double cal;
         switch (this) {
             case CHEDDAR:
-                rtr = 400;
+                cal = 400;
                 break;
             case DEEPFRIEDONIONS:
-                rtr = 590;
+                cal = 590;
                 break;
             case TOMATO:
             default:
-                rtr = 21;
+                cal = 21;
         }
-        return rtr;
+        return cal;
     }
 
     @Override
     public double price() {
-        double rtr;
+        double price;
         switch (this) {
             case CHEDDAR:
-                rtr = 4;
+                price = 4;
                 break;
             case DEEPFRIEDONIONS:
-                rtr = 1.5;
+                price = 1.5;
                 break;
             case TOMATO:
             default:
-                rtr = 0.5;
+                price = 0.5;
         }
-        return rtr;
+        return price;
     }
 
     public boolean hasUniquePrice() {
@@ -45,18 +45,18 @@ public enum BurgerIngredient implements Base {
 
     @Override
     public String toString() {
-        String rtr;
+        String type;
         switch (this) {
             case CHEDDAR:
-                rtr = "cheddar";
+                type = "cheddar";
                 break;
             case DEEPFRIEDONIONS:
-                rtr = "deep fried onions";
+                type = "deep fried onions";
                 break;
             case TOMATO:
             default:
-                rtr = "tomato";
+                type = "tomato";
         }
-        return rtr;
+        return type;
     }
 }
