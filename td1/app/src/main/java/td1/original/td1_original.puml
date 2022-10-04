@@ -1,4 +1,4 @@
-@startuml TD1Original
+@startuml td1_original
 'https://plantuml.com/class-diagram'
 !include commons.style
 package TD1 {
