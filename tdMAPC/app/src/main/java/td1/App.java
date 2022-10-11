@@ -3,12 +3,57 @@
  */
 package td1;
 
-public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
+import td1.refactor.api.bigburger.BigBurgerRestaurant;
+import td1.refactor.api.general.Burger;
+import td1.refactor.api.general.BurgerAdvisor;
+import td1.refactor.api.macdeau.MacDeauRestaurant;
 
+import java.util.Arrays;
+import java.util.List;
+
+import static td1.refactor.api.general.MeatType.BEEF;
+import static td1.refactor.api.general.MenuType.FISH_MENU;
+import static td1.refactor.api.general.MenuType.MEAT_MENU;
+import static td1.refactor.api.general.SauceType.*;
+import static td1.refactor.api.general.Size.BIG;
+import static td1.refactor.api.general.Tariff.CHEAP;
+import static td1.refactor.api.general.Tariff.EXPENSIVE;
+
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        BurgerAdvisor.register(CHEAP, MacDeauRestaurant.queue());
+        BurgerAdvisor.register(EXPENSIVE, BigBurgerRestaurant.queue());
+        BurgerAdvisor advisor = BurgerAdvisor.instance();
+        // A regular burger
+        Burger alice_dinner = advisor
+                .select(CHEAP)
+                .order_menu(FISH_MENU)
+                .cook();
+        // A burger with extra onions and cheese
+        Burger bob_dinner = advisor
+                .select(CHEAP)
+                .order_menu(MEAT_MENU)
+                .with_onions()
+                .with_cheese()
+                .cook();
+        // Cholesterol Burger
+        Burger charles_dinner = advisor
+                .select(EXPENSIVE)
+                .order_personal(BIG, BEEF)
+                .with_onions()
+                .with_cheese()
+                .with_sauce(BARBECUE)
+                .with_sauce(BEARNAISE)
+                .with_sauce(BURGER)
+                .with_cheese()
+                .cook();
+        List<Burger> dinners = Arrays.asList(
+                alice_dinner,
+                bob_dinner,
+                charles_dinner
+        );
+        for (Burger dinner : dinners) {
+            System.out.println(dinner);
+        }
     }
 }

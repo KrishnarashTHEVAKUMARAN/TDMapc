@@ -12,8 +12,6 @@
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-N
-app/src/main/java/td1/App.java,3\9\39f5908fd2016e9b4d35f5a39a44f28bda33004a
 R
 "app/src/test/java/td1/AppTest.java,d\5\d5549d497ef981862a149860f14b4571672d7a28
 g
@@ -30,8 +28,6 @@ f
 ,app/src/main/java/td1/original/commons.style,e\2\e2d1dff04fb80506037625b96a4ec2af9dbba954
 Y
 )app/src/main/java/td1/step1/commons.style,a\5\a5da8a6806d36bef83a8edc5c1fc5b728ef887b5
-^
-.app/src/main/java/td1/original/client/App.java,0\e\0e28516d32284f88eaca3cf27842ba7d002b5bb8
 `
 0app/src/main/java/td1/original/td1_original.puml,d\9\d971b434f95f7a3af0e67b44c0d22321b11c8315
 e
@@ -76,8 +72,6 @@ n
 >app/src/main/java/td1/step5/api/restauration/ComposedFood.java,9\6\96ef32f9caf7038e34e96775280aebb4ffcddd8b
 [
 +app/src/main/java/td1/step5/client/App.java,9\8\98cbb4fd0b62c2962308b50e97ff5b15118bf64e
-^
-.app/src/main/java/td1/refactor/client/App.java,6\4\648d0b486fb118848bfade112ec6fd32acdc8510
 f
 6app/src/main/java/td1/original/api/general/Burger.java,0\6\06072118e5f3053df691ca1f6833a2b5a8dc68b5
 m
@@ -136,12 +130,6 @@ l
 <app/src/main/java/td1/step5/api/restauration/Ingredient.java,5\6\567dc7a799147cf340d131ad914f3e3b776bf8db
 h
 8app/src/main/java/td1/step5/api/restauration/Recipe.java,7\4\7416daeea6912c4f9e065a2eef1d6bbf8175b780
-o
-?app/src/main/java/td1/refactor/api/bigburger/BigBurgerCook.java,f\7\f7f0835262f8355ef84bde3a7410463d4f024d5a
-u
-Eapp/src/main/java/td1/refactor/api/bigburger/BigBurgerRestaurant.java,6\a\6ab6fc155419932f045e8fdb2e2bfd093daaea54
-q
-Aapp/src/main/java/td1/refactor/api/bigburger/BigBurgerBurger.java,b\8\b8b8b252c4b7ca54b6bd8085098ef2b7505066c3
 m
 =app/src/main/java/td1/refactor/api/macdeau/MacDeauBurger.java,5\8\58afdb6d6269324f9bbe417462567e44ffba671b
 q
