@@ -27,8 +27,8 @@ __TD1 Refactor__
 
 __TD2 Fichier__
 
-![Screenshoot](tdMAPC/app/src/main/java/td2/Fichier/td2_Fichier.png "PlantUML Td2_Fichier")
+![Screenshoot](tdMAPC/app/src/main/java/td2/Fichier/TD2_Fichier.png "PlantUML Td2_Fichier")
 
 __TD2 Forum__
 
-![Screenshoot](tdMAPC/app/src/main/java/td2/Forum/td2_Forum.png "PlantUML Td2_Forum")
+![Screenshoot](tdMAPC/app/src/main/java/td2/Forum/TD2_Forum.png "PlantUML Td2_Forum")
