@@ -25,3 +25,14 @@ __TD1 Step5__
 __TD1 Refactor__
 
 ![Screenshoot](td1/app/src/main/java/td1/refactor/td1_refactor_ProfVersion.png "PlantUML Td1_refactor")
+
+
+## TD2
+
+__TD2 Fichier__
+
+![Screenshoot](td1/app/src/main/java/td2/Fichier/td2_Fichier.png "PlantUML Td2_Fichier")
+
+__TD2 Forum__
+
+![Screenshoot](td1/app/src/main/java/td2/Forum/td2_Forum.png "PlantUML Td2_Forum")
