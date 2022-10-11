@@ -1,0 +1,98 @@
+@startuml TD2_Fichier
+'https://plantuml.com/class-diagram'
+!include commons.style
+
+package td2 {
+    package Fichier{
+            interface Composant {
+                + getName(): String
+                + getContent(): String
+                + getOwner(): Owner
+                + getSize(): int
+                + appendContent(in content: String): void
+                + setOwner(in owner: Owner)
+            }
+
+            interface Composite {
+                + addChild()
+                + removeChild()
+                + getChildren()
+                + removeChildren()
+            }
+
+            interface FSFactory {
+                - {static} instance : FSFactory
+                createComposant(in type: ComposantType, in name: String, in owner: Owner) : Composant
+                + {static} getInstance() : FSFactory
+            }
+
+            class FSFactoryImp implements FSFactory{
+                - {static} instance : FSFactory
+                + createComposant(in type: ComposantType, in name: String, in owner: Owner): Composant
+                + {static} getInstance() : FSFactory
+            }
+
+            enum ComposantType {
+                REPERTOIRE, FICHIER
+            }
+
+            class ComposantImpl implements Composant{
+                - name : String
+
+                ~ this(in name: String, in owner: Owner)
+                + getName(): String
+                + getContent(): String
+                + getOwner(): Owner
+                + getSize(): int
+                + appendContent(in content: String): void
+                + setOwner(in owner: Owner)
+            }
+
+            class Fichier extends ComposantImpl{
+                - name : String
+                ~ this(in name: String, in owner: Owner)
+                + getName(): String
+                + getContent(): String
+                + getOwner(): Owner
+                + getSize(): int
+                + appendContent(in content: String): void
+                + setOwner(in owner: Owner)
+            }
+
+            class Repertoire extends ComposantImpl{
+                - name : String
+                + this(in name: String, in owner: Owner)
+                + getName(): String
+                + getContent(): String
+                + getOwner(): Owner
+                + getSize(): int
+                + appendContent(in content: String): void
+                + setOwner(in owner: Owner)
+                + addChild()
+                + removeChild()
+                + getChildren()
+                + removeChildren()
+            }
+
+            class Owner {
+                - name : String
+
+                + this(in n: String)
+                + equals()
+                + hashCode()
+                + toString()
+            }
+
+    }
+}
+
+   Composite *-> Composant
+   ComposantImpl --> "1" Owner  : -owner
+   FSFactoryImp --> ComposantType
+   Repertoire *--> "*" Composant : - elems
+   FSFactoryImp o-- Composant
+   Fichier *-->  Composite
+   Owner  --> "~possède *" Fichier
+   Owner  --> "~possède *" Repertoire
+
+@enduml
