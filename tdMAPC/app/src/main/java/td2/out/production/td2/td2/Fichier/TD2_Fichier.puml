@@ -22,7 +22,13 @@ package td2 {
 
             interface FSFactory {
                 - {static} instance : FSFactory
-                + createComposant(in type: ComposantType, in name: String, in owner: Owner)
+                createComposant(in type: ComposantType, in name: String, in owner: Owner) : Composant
+                + {static} getInstance() : FSFactory
+            }
+
+            class FSFactoryImp implements FSFactory{
+                - {static} instance : FSFactory
+                + createComposant(in type: ComposantType, in name: String, in owner: Owner): Composant
                 + {static} getInstance() : FSFactory
             }
 
@@ -82,9 +88,9 @@ package td2 {
 
    Composite *-> Composant
    ComposantImpl --> "1" Owner  : -owner
-   FSFactory --> ComposantType
+   FSFactoryImp --> ComposantType
    Repertoire *--> "*" Composant : - elems
-   FSFactory o-- Composant
+   FSFactoryImp o-- Composant
    Fichier *-->  Composite
    Owner  --> "~possède *" Fichier
    Owner  --> "~possède *" Repertoire
