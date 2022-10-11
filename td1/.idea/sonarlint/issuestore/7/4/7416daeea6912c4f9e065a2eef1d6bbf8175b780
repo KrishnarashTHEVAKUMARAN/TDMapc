@@ -1,0 +1,12 @@
+
+n
+java:S34571"Q%n should be used in place of \n to produce the platform-specific line separator.(Íì¾ˆ8ú¡¶›º0
+n
+java:S34573"Q%n should be used in place of \n to produce the platform-specific line separator.(”Õ±©8„Œ¿º0
+n
+java:S34576"Q%n should be used in place of \n to produce the platform-specific line separator.(íß8ı¡¶›º0
+n
+java:S34578"Q%n should be used in place of \n to produce the platform-specific line separator.(æ£ù÷8ÿ¡¶›º0
+s
+java:S34579"Q%n should be used in place of \n to produce the platform-specific line separator.(Ñ¡Ù‡ıÿÿÿÿ8€¢¶›º0
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ğº×·üÿÿÿÿ
