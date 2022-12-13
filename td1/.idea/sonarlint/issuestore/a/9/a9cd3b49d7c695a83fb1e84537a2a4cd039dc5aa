@@ -1,0 +1,12 @@
+
+£
+java:S1186*"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(çÖĞùùÿÿÿÿ8õûÈæÅ0
+N
+java:S1172",Remove this unused method parameter "owner".(Ô‡œìùÿÿÿÿ8›üÈæÅ0
+9
+java:S1116"Remove this empty statement.(¬Ù¿…8¥üÈæÅ0
+\
+java:S1117":Rename "content" which hides the field declared at line 9.(¦©‘¾üÿÿÿÿ8®ÉæÅ0
+K
+java:S11210".Extract the assignment out of this expression.(º©Œ¤8½ÉæÅ0
+u	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(àğ…18ÀÉæÅ0
